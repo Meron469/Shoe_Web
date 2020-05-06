@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for shoe in shoes %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+            <a class="mr-2" href="#">{{ shoe[1] }}</a>
+            <small class="text-muted">{{ shoe[2] }}</small>
+            </div>
+            <h2><a class="article-title" href="{{ url_for('shoe', shoe_id=shoe[0]) }}">{{ shoe[3] }}</a></h2>
+            <p class="article-content">{{ shoe[4] }}</p>
+        </div>
+    </article>
+    {% endfor %}
+{% endblock content %}
